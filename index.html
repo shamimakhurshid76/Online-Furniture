@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Furniture - Premier L-Shape & Corner Sofas in Hazaribagh</title>
+    <style>
+        /* CORE STYLES & LAYOUT */
+        :root {
+            --primary: #333; /* Dark Grey for text */
+            --accent: #d4af37; /* Gold, matching your 'Exclusive Collection' badge */
+            --bg-light: #f9f9f9;
+            --white: #fff;
+        }
+
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; color: var(--primary); background-color: var(--bg-light); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* HEADER */
+        header { background: var(--white); padding: 20px 0; border-bottom: 1px solid #eee; text-align: center; }
+        h1.brand { font-size: 2.5em; margin: 0; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; }
+        .contact-info { color: #777; margin-top: 5px; }
+
+        /* HERO & INTRO */
+        .hero { text-align: center; padding: 60px 0; background-color: var(--white); margin-bottom: 30px; }
+        .hero h2 { font-size: 2em; var(--primary); }
+        .hero p { max-width: 700px; margin: 0 auto 30px; color: #555; }
+
+        /* THE GALLERY/CATALOG */
+        .catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 30px 0; }
+        .product-card { background: var(--white); border: 1px solid #eee; border-radius: 8px; overflow: hidden; transition: box-shadow 0.3s ease; }
+        .product-card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .product-image { width: 100%; height: 250px; background-size: cover; background-position: center; }
+        .product-details { padding: 20px; }
+        .product-details h3 { margin-top: 0; font-size: 1.3em; }
+        .product-price { font-size: 1.2em; color: var(--accent); font-weight: bold; margin-bottom: 10px; }
+        
+        /* WHATSAPP LINKAGE BUTTON */
+        .btn-whatsapp { display: inline-block; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; }
+        .btn-whatsapp:hover { background-color: #1ebe57; }
+
+        /* BILLING SOFTWARE CALCULATOR */
+        .billing-section { background-color: var(--white); padding: 40px; border-radius: 8px; margin-top: 50px; border: 1px solid #eee; }
+        .billing-section h2 { text-align: center; color: var(--accent); }
+        .billing-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 600px; margin: 0 auto; }
+        .billing-form input { padding: 12px; border: 1px solid #ccc; border-radius: 4px; }
+        .billing-results { margin-top: 30px; padding: 20px; background: var(--bg-light); border-radius: 4px; text-align: center; }
+        .bill-total { font-size: 2em; font-weight: bold; color: var(--primary); }
+        .btn-calc { background: var(--primary); color: white; border: none; padding: 12px 20px; cursor: pointer; grid-column: span 2; }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 40px 0; background: var(--white); border-top: 1px solid #eee; margin-top: 50px; }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) { .billing-form { grid-template-columns: 1fr; } .btn-calc { grid-column: span 1; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="brand">Online Furniture</h1>
+            <div class="contact-info">by Bhola Sofa Centre | Hazaribagh | Call: 9905044663</div>
+        </div>
+    </header>
+
+    <div class="container hero">
+        <h2>Your Premium L-Shape Sofa Awaits</h2>
+        <p>Explore our exclusive collection of modern, luxurious L-shape corner sofas, designed for comfort and style. Direct from the manufacturers in Hazaribagh.</p>
+        <a href="#catalog" class="btn-calc" style="text-decoration: none; border-radius: 25px;">Browse Collection</a>
+    </div>
+
+    <div id="catalog" class="container catalog">
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('image_0.png');"></div>
+            <div class="product-details">
+                <h3>Premium L-Shape Corner Sofa</h3>
+                <p>Luxurious Velvet, High Density Foam, Stylish Tufting.</p>
+                <a href="https://wa.me/919905044663?text=Hi, I am interested in the Premium L-Shape Corner Sofa." target="_blank" class="btn-whatsapp">Request Quote on WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('image_2.png');"></div>
+            <div class="product-details">
+                <h3>Royal Curve Sleeper Sofa</h3>
+                <p>Maroon & Cream Finish, Diamond Tufted, Glass Top Table.</p>
+                <a href="https://wa.me/919905044663?text=Hi, I am interested in the Royal Curve L-Shape Sleeper Sofa." target="_blank" class="btn-whatsapp">Request Quote on WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image" style="background-image: url('image_4.png');"></div>
+            <div class="product-details">
+                <h3>Butterfly Handle Blue Sofa</h3>
+                <p>Elegant L-Shape, Blue & White, Transparent Glass Top Table.</p>
+                <a href="https://wa.me/919905044663?text=Hi, I am interested in the Butterfly Handle Blue Sofa." target="_blank" class="btn-whatsapp">Request Quote on WhatsApp</a>
+            </div>
+        </div>
+        
+        </div>
+
+    <div class="container billing-section">
+        <h2>Built-in Billing Tool</h2>
+        <p style="text-align:center;">Calculate the total including GST (e.g., 18% for Furniture) for any of our items.</p>
+        
+        <div class="billing-form">
+            <input type="text" id="itemName" placeholder="Item Name (e.g., Royal Curve Sofa)">
+            <input type="number" id="basePrice" placeholder="Base Price (₹)">
+            <input type="number" id="gstRate" placeholder="GST Rate (%) (e.g., 18)">
+            <input type="text" id="customerPhone" placeholder="Customer WhatsApp Number">
+            <button class="btn-calc" onclick="calculateBill()">Generate Bill</button>
+        </div>
+
+        <div id="billingResults" class="billing-results" style="display:none;">
+            <h3>Bill Summary</h3>
+            <p>Item: <span id="resItemName"></span></p>
+            <p>GST Amount: ₹<span id="resGstAmount"></span></p>
+            <p class="bill-total">Total: ₹<span id="resTotal"></span></p>
+            <button id="whatsappBillBtn" class="btn-whatsapp" style="margin-top: 15px; border:none; cursor:pointer;">Send Bill to Customer via WhatsApp</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            &copy; 2023 Online Furniture | All rights reserved.<br>
+            "Comfort jo dikhe bhi aur mehsoos bhi ho"
+        </div>
+    </footer>
+
+    <script>
+        function calculateBill() {
+            // 1. Get input values
+            const itemName = document.getElementById('itemName').value;
+            const basePrice = parseFloat(document.getElementById('basePrice').value);
+            const gstRate = parseFloat(document.getElementById('gstRate').value);
+            const customerPhone = document.getElementById('customerPhone').value.replace(/\D/g,''); // Remove non-digits
+
+            if(!itemName || !basePrice || isNaN(gstRate) || !customerPhone) {
+                alert("Please fill in all fields to generate the bill.");
+                return;
+            }
+
+            // 2. Perform Calculations
+            const gstAmount = (basePrice * gstRate) / 100;
+            const total = basePrice + gstAmount;
+
+            // 3. Display Results
+            document.getElementById('resItemName').innerText = itemName;
+            document.getElementById('resGstAmount').innerText = gstAmount.toFixed(2);
+            document.getElementById('resTotal').innerText = total.toFixed(2);
+            document.getElementById('billingResults').style.display = 'block';
+
+            // 4. Update WhatsApp Bill Button Link
+            const whatsappMessage = `*Bill Summary from Online Furniture*\n\n*Item:* ${itemName}\n*Base Price:* ₹${basePrice}\n*GST (${gstRate}%):* ₹${gstAmount.toFixed(2)}\n*Grand Total:* *₹${total.toFixed(2)}*\n\nThank you for choosing us!`;
+            
+            // Note: Add country code if necessary, e.g., '91' for India
+            const cleanPhone = customerPhone.length === 10 ? '91' + customerPhone : customerPhone;
+            
+            const waBillLink = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+            document.getElementById('whatsappBillBtn').onclick = function() { window.open(waBillLink, '_blank'); };
+        }
+    </script>
+</body>
+</html>
