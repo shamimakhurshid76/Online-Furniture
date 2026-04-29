@@ -3,72 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Furniture | Order Now</title>
+    <title>Premium Furniture | Order Now</title>
     <style>
-        :root { --gold: #d4af37; --dark: #222; --white: #fff; }
-        body { font-family: sans-serif; margin: 0; background: #f4f4f4; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        header { background: var(--dark); color: white; padding: 20px; text-align: center; }
+        /* Professional Color Palette */
+        :root { 
+            --gold: #c5a880; 
+            --dark: #2c3e50; /* Slate Navy */
+            --light-bg: #f5f7f8; 
+            --white: #fff; 
+            --text: #333;
+        }
         
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            background: var(--light-bg); 
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header { 
+            background: var(--dark); 
+            color: var(--white); 
+            padding: 25px 20px; 
+            text-align: center; 
+            border-bottom: 4px solid var(--gold);
+        }
+        
+        header h1 { margin: 0; font-size: 2.2em; letter-spacing: 1px; }
+        header p { margin: 10px 0 0 0; color: #d1d8e0; font-size: 1.1em; }
+        
+        /* Two-Column Layout */
+        .layout-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            gap: 30px;
+            align-items: flex-start;
+            flex: 1;
+        }
+
+        /* Left Sidebar - Categories */
+        .sidebar {
+            flex: 1; 
+            min-width: 240px;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 20px; 
+        }
+        .sidebar h3 { margin-top: 0; border-bottom: 2px solid var(--gold); padding-bottom: 10px; color: var(--dark); }
+        .category-btn {
+            display: block; width: 100%; padding: 12px 15px; margin-bottom: 10px;
+            background: #f8f9fa; border: 1px solid #e2e8f0; cursor: pointer;
+            text-align: left; font-size: 1em; border-radius: 5px; transition: all 0.3s ease;
+            color: var(--text); font-weight: 500;
+        }
+        .category-btn:hover { background: var(--dark); color: var(--white); border-color: var(--dark); }
+
+        /* Right Side - Main Content */
+        .main-content {
+            flex: 3; 
+        }
+
         /* Product Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
-        .card img { width: 100%; border-radius: 5px; }
-        .price { font-weight: bold; color: var(--gold); font-size: 1.2em; margin: 10px 0; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+            gap: 25px; 
+            margin-bottom: 40px;
+        }
+        .card { 
+            background: var(--white); padding: 15px; border-radius: 8px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; 
+            transition: transform 0.2s ease;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card img { 
+            width: 100%; height: 220px; object-fit: cover; 
+            border-radius: 5px; background: #eaeaea; 
+        }
+        .card h3 { color: var(--dark); margin: 15px 0 5px 0; font-size: 1.2em; }
+        .price { font-weight: bold; color: var(--gold); font-size: 1.3em; margin: 10px 0; }
         
         /* Buttons */
-        .btn-add { background: var(--dark); color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; width: 100%; }
-        .btn-order { background: #25D366; color: white; border: none; padding: 15px 30px; cursor: pointer; border-radius: 5px; font-size: 1.1em; width: 100%; margin-top: 20px; }
+        .btn-add { background: var(--dark); color: var(--white); border: none; padding: 12px 20px; cursor: pointer; border-radius: 5px; width: 100%; font-size: 1em; transition: 0.3s; }
+        .btn-add:hover { background: var(--gold); color: var(--dark); font-weight: bold; }
+        .btn-order { background: #25D366; color: var(--white); border: none; padding: 15px 30px; cursor: pointer; border-radius: 5px; font-size: 1.1em; width: 100%; margin-top: 20px; font-weight: bold; transition: 0.3s; }
+        .btn-order:hover { background: #1ebe5d; }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px;
+        }
+        .faq-section h2 { color: var(--dark); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top: 0; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item strong { display: block; color: var(--dark); font-size: 1.1em; margin-bottom: 5px; }
+        .faq-item p { margin: 0; color: #555; line-height: 1.5; }
 
         /* Cart Section */
-        .cart-section { background: white; margin-top: 40px; padding: 20px; border-radius: 8px; border-top: 4px solid var(--gold); }
-        .cart-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .cart-section { background: var(--white); padding: 30px; border-radius: 8px; border-top: 4px solid var(--gold); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .cart-section h2 { color: var(--dark); margin-top: 0; }
+        .cart-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
+        
+        /* Form Inputs */
+        .form-input { width: 100%; padding: 12px; margin-top: 15px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 5px; font-family: inherit; font-size: 1em; }
+
+        /* Footer */
+        footer {
+            background: var(--dark); color: var(--white); text-align: center; padding: 25px 20px; margin-top: auto;
+        }
+        footer p { margin: 5px 0; color: #b2bec3; }
+
+        /* Floating WhatsApp Button for Queries */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: 0.3s;
+            z-index: 1000;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+            background-color: #1ebe5d;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .layout-container { flex-direction: column; }
+            .sidebar { position: static; width: 100%; box-sizing: border-box; margin-bottom: 20px; }
+            .whatsapp-float { bottom: 20px; right: 20px; padding: 12px 15px; font-size: 1em; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Online Furniture</h1>
-    <p>Premium Craftsmanship | Hazaribagh</p>
+    <h1>Premium Furniture Manufacturing</h1>
+    <p>Exceptional Craftsmanship | Custom Designs | Hazaribagh</p>
 </header>
 
-<div class="container">
-    <div class="grid">
-        <div class="card">
-            <img src="image_0.png" alt="Sofa">
-            <h3>Premium L-Shape Sofa</h3>
-            <p class="price">₹45,000</p>
-            <button class="btn-add" onclick="addToCart('Premium L-Shape Sofa', 45000)">Add to Order</button>
-        </div>
-        <div class="card">
-            <img src="image_2.png" alt="Sofa">
-            <h3>Royal Curve Sleeper</h3>
-            <p class="price">₹55,000</p>
-            <button class="btn-add" onclick="addToCart('Royal Curve Sleeper', 55000)">Add to Order</button>
-        </div>
-    </div>
+<div class="layout-container">
+    
+    <aside class="sidebar">
+        <h3>Categories</h3>
+        <button class="category-btn" onclick="filterCategory('All')">Show All</button>
+        <button class="category-btn" onclick="filterCategory('5 Seater Sofa Set')">5 Seater Sofa Set</button>
+        <button class="category-btn" onclick="filterCategory('3 Seater Sofa')">3 Seater Sofa</button>
+        <button class="category-btn" onclick="filterCategory('Corner Sofa')">Corner Sofa</button>
+        <button class="category-btn" onclick="filterCategory('Circular Sofa')">Circular Sofa</button>
+        <button class="category-btn" onclick="filterCategory('Sofa Cum Bed')">Sofa Cum Bed</button>
+        <button class="category-btn" onclick="filterCategory('Chester')">Chester</button>
+        <button class="category-btn" onclick="filterCategory('Centre Table')">Centre Table</button>
+        <button class="category-btn" onclick="filterCategory('Bed')">Bed</button>
+        <button class="category-btn" onclick="filterCategory('Headboard')">Headboard</button>
+        <button class="category-btn" onclick="filterCategory('Mattress')">Mattress</button>
+        <button class="category-btn" onclick="filterCategory('Dressing')">Dressing</button>
+    </aside>
 
-    <div class="cart-section">
-        <h2>Your Order List</h2>
-        <div id="cartItems">
-            <p>No items added yet.</p>
-        </div>
-        <hr>
-        <div style="font-size: 1.5em; font-weight: bold; text-align: right;">
-            Total: ₹<span id="totalBill">0</span>
-        </div>
+    <main class="main-content">
         
-        <input type="text" id="custName" placeholder="Your Name" style="width: 100%; padding: 10px; margin-top: 20px; box-sizing: border-box;">
-        <button class="btn-order" onclick="placeOrder()">Place Order & Send Bill to WhatsApp</button>
-    </div>
+        <div class="grid" id="productGrid">
+            
+            <div class="card" data-category="Corner Sofa">
+                <img src="" alt="Work Image Blank">
+                <h3>Premium L-Shape Sofa</h3>
+                <p class="price">₹45,000</p>
+                <button class="btn-add" onclick="addToCart('Premium L-Shape Sofa', 45000)">Add to Order</button>
+            </div>
+
+            <div class="card" data-category="5 Seater Sofa Set">
+                <img src="" alt="Work Image Blank">
+                <h3>5 Seater Luxury Set</h3>
+                <p class="price">₹65,000</p>
+                <button class="btn-add" onclick="addToCart('5 Seater Luxury Set', 65000)">Add to Order</button>
+            </div>
+
+            <div class="card" data-category="Centre Table">
+                <img src="" alt="Work Image Blank">
+                <h3>Glass Top Centre Table</h3>
+                <p class="price">₹12,000</p>
+                <button class="btn-add" onclick="addToCart('Glass Top Centre Table', 12000)">Add to Order</button>
+            </div>
+            
+            </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <strong>Do you offer custom fabric choices?</strong>
+                <p>Yes, we specialize in high-quality upholstery materials. You can customize your order with specific fabrics and colors, including premium options like Sea Green suede and Teal Blue.</p>
+            </div>
+            
+            <div class="faq-item">
+                <strong>What components are used in your furniture?</strong>
+                <p>We manufacture our pieces using top-tier materials, ensuring durability from the internal foam and hardware to the final exterior fabric.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>How does the delivery process work?</strong>
+                <p>Once you place an order via WhatsApp, our team will contact you to confirm details, address, and an estimated delivery timeline for your specific location.</p>
+            </div>
+        </div>
+
+        <div class="cart-section">
+            <h2>Your Order List</h2>
+            <div id="cartItems">
+                <p style="color: #777;">No items added yet.</p>
+            </div>
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ccc;">
+            <div style="font-size: 1.5em; font-weight: bold; text-align: right; color: var(--dark);">
+                Total: ₹<span id="totalBill">0</span>
+            </div>
+            
+            <input type="text" id="custName" class="form-input" placeholder="Your Full Name">
+            
+            <textarea id="custAddress" class="form-input" rows="3" placeholder="Enter Complete Delivery Address"></textarea>
+            
+            <button class="btn-order" onclick="placeOrder()">Place Order & Send Bill to WhatsApp</button>
+        </div>
+
+    </main>
+
 </div>
 
+<footer>
+    <p>&copy; 2026 Premium Furniture Manufacturing.</p>
+    <p>All Rights Reserved. Product designs, specifications, and pricing are subject to change.</p>
+</footer>
+
+<a href="https://wa.me/919905044663?text=Hi,%20I%20have%20a%20query%20regarding%20your%20furniture." class="whatsapp-float" target="_blank">
+    💬 Contact for Queries
+</a>
+
 <script>
+    // --- CATEGORY FILTERING LOGIC ---
+    function filterCategory(categoryName) {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            if (categoryName === 'All' || card.getAttribute('data-category') === categoryName) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // --- CART AND WHATSAPP LOGIC ---
     let cart = [];
 
     function addToCart(name, price) {
         cart.push({name, price});
         updateCartUI();
+        document.querySelector('.cart-section').scrollIntoView({ behavior: 'smooth' });
     }
 
     function updateCartUI() {
@@ -82,31 +283,32 @@
             cartDiv.innerHTML += `
                 <div class="cart-item">
                     <span>${item.name}</span>
-                    <span>₹${item.price}</span>
+                    <span style="font-weight:bold;">₹${item.price.toLocaleString('en-IN')}</span>
                 </div>`;
         });
 
-        if (cart.length === 0) cartDiv.innerHTML = '<p>No items added yet.</p>';
+        if (cart.length === 0) cartDiv.innerHTML = '<p style="color: #777;">No items added yet.</p>';
         totalSpan.innerText = total.toLocaleString('en-IN');
     }
 
     function placeOrder() {
         const name = document.getElementById('custName').value;
-        if (!name || cart.length === 0) {
-            alert("Please add items and enter your name.");
+        const address = document.getElementById('custAddress').value; 
+
+        if (!name || !address || cart.length === 0) {
+            alert("Please add items to your cart and enter both your name and address.");
             return;
         }
 
         let total = 0;
         let itemDetails = "";
         cart.forEach((item, i) => {
-            itemDetails += `${i+1}. ${item.name} - ₹${item.price}\n`;
+            itemDetails += `${i+1}. ${item.name} - ₹${item.price.toLocaleString('en-IN')}\n`;
             total += item.price;
         });
 
-        const message = `*NEW ORDER - ONLINE FURNITURE*\n\n*Customer:* ${name}\n\n*Items:*\n${itemDetails}\n*TOTAL BILL:* ₹${total}\n\n_Please confirm this order._`;
+        const message = `*NEW ORDER - PREMIUM FURNITURE*\n\n*Customer Name:* ${name}\n*Delivery Address:* ${address}\n\n*Items Ordered:*\n${itemDetails}\n*TOTAL BILL:* ₹${total.toLocaleString('en-IN')}\n\n_Please confirm this order._`;
         
-        // YOUR WHATSAPP NUMBER HERE
         const myNumber = "919905044663"; 
         const waLink = `https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`;
         
