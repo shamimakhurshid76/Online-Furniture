@@ -4,175 +4,345 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Furniture | Order Now</title>
+    
+    <!-- Elegant Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
     <style>
         /* Professional Color Palette */
         :root { 
-            --gold: #c5a880; 
-            --dark: #2c3e50; 
-            --light-bg: #f5f7f8; 
-            --white: #fff; 
-            --text: #333;
+            --gold: #9c7c5e; /* Elegant Walnut/Bronze */
+            --dark: #222831; /* Deep Professional Charcoal */
+            --light-bg: #f4f6f8; /* Clean Modern Gray */
+            --white: #ffffff; 
+            --text: #393e46; /* Softer text for readability */
         }
         
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-family: 'Montserrat', sans-serif; 
             margin: 0; 
             background: var(--light-bg); 
             color: var(--text);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Elegant Headings */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
         }
         
+        /* Top Navigation / Header */
         header { 
-            background: var(--dark); 
-            color: var(--white); 
-            padding: 25px 20px; 
+            background-image: linear-gradient(rgba(229, 224, 216, 0.8), rgba(214, 206, 195, 0.85)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Beautiful, light room visible in banner format */
+            background-size: cover;
+            background-position: center 60%; /* Focuses the camera perfectly on the furniture */
+            color: var(--dark); 
+            padding: 60px 20px; /* Made the header taller so you can actually see the room */
             text-align: center; 
             border-bottom: 4px solid var(--gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
         }
-        
-        header h1 { margin: 0; font-size: 2.2em; letter-spacing: 1px; }
-        header p { margin: 10px 0 0 0; color: #d1d8e0; font-size: 1.1em; }
+        header h1 { margin: 0; font-size: 2.6em; letter-spacing: 2px; text-transform: uppercase; text-shadow: 2px 2px 5px rgba(255,255,255,0.7); } 
+        header p { margin: 10px 0 0 0; color: #222831; font-size: 1.1em; letter-spacing: 1.5px; font-weight: 500;} 
         
         /* Layout Container */
-        .layout-container {
-            display: flex;
+        .container {
             max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-            gap: 30px;
-            align-items: flex-start;
-            flex: 1;
+            margin: 0 auto;
+            padding: 40px 20px;
             width: 100%;
             box-sizing: border-box;
+            flex: 1;
         }
 
-        /* Left Sidebar - Categories */
-        .sidebar {
-            flex: 1; 
-            min-width: 280px;
+        /* ==========================================
+           VIEW 1: HERO / LANDING PAGE
+           ========================================== */
+        .hero-section {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); /* Beautiful well-furnished home interior */
+            background-size: cover;
+            background-position: center;
+            height: 90vh; /* Increased from 75vh for a much bigger banner */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+        /* Dark overlay to make text readable */
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            max-width: 1200px; /* Widened to give text room to stretch */
+            width: 100%;
+        }
+        .hero-content h2 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem); /* Dynamic font size adapts to screen width */
+            margin: 0 0 20px 0;
+            color: #f4ebd8; /* Soft, elegant warm cream/gold */
+            text-shadow: 2px 3px 8px rgba(0,0,0,0.8);
+            letter-spacing: 1px;
+            font-weight: 700;
+            font-style: italic; /* Adds a luxurious, editorial feel */
+            white-space: nowrap; /* Forces the quote to end in one line */
+        }
+        .hero-content p {
+            font-size: 1.3em;
+            margin: 0 0 40px 0;
+            line-height: 1.6;
+            color: #eaeaea;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-hero {
+            background: var(--gold); color: var(--white);
+            padding: 18px 40px; font-size: 1.2em; font-weight: bold;
+            border: none; border-radius: 50px; cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(156, 124, 94, 0.4);
+        }
+        .btn-hero:hover {
+            transform: translateY(-3px);
+            background: #7d634b;
+        }
+        .btn-hero-ai {
+            background: var(--white); color: var(--dark);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        }
+        .btn-hero-ai:hover {
+            background: #f0f0f0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--white); padding: 40px; border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin: 40px auto; max-width: 1000px;
+        }
+        .faq-section h2 { color: var(--dark); border-bottom: 2px solid var(--gold); padding-bottom: 15px; margin-top: 0; font-size: 2em; text-align: center;}
+        .faq-item { margin-bottom: 25px; }
+        .faq-item strong { display: block; color: var(--dark); font-size: 1.2em; margin-bottom: 8px; }
+        .faq-item p { margin: 0; color: #555; line-height: 1.6; font-size: 1.05em;}
+
+        /* ==========================================
+           VIEWS: COMMON HEADER
+           ========================================== */
+        .page-header {
+            display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 2px solid var(--gold); padding-bottom: 15px; margin-bottom: 30px;
+        }
+        .page-header h2 { color: var(--dark); margin: 0; font-size: 2em; }
+        .btn-back {
+            background: var(--dark); color: var(--white); border: none; padding: 10px 20px; 
+            cursor: pointer; border-radius: 5px; font-size: 1em; transition: 0.3s;
+        }
+        .btn-back:hover { background: var(--gold); color: var(--dark); }
+
+        /* ==========================================
+           VIEW 2: CATEGORIES PAGE (Menu)
+           ========================================== */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .category-card {
             background: var(--white);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            cursor: pointer;
+            border: 1px solid #eaeaea;
+            transition: all 0.3s ease;
         }
-        .sidebar h3 { margin-top: 0; border-bottom: 2px solid var(--gold); padding-bottom: 10px; color: var(--dark); }
-        .category-btn {
-            display: block; width: 100%; padding: 15px; margin-bottom: 10px;
-            background: #f8f9fa; border: 1px solid #e2e8f0; cursor: pointer;
-            text-align: left; font-size: 1.05em; border-radius: 5px; transition: all 0.3s ease;
-            color: var(--text); font-weight: 500;
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+            box-shadow: 0 8px 25px rgba(156, 124, 94, 0.2);
         }
-        .category-btn:hover { background: var(--dark); color: var(--white); border-color: var(--dark); }
+        .category-card h3 { margin: 0; color: var(--dark); font-size: 1.3em; }
 
-        /* Main Content Areas */
-        .main-content {
-            flex: 2; 
-        }
-
-        /* Product Grid */
+        /* ==========================================
+           VIEW 3: PRODUCTS & BILLING PAGE
+           ========================================== */
         .grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
-            gap: 25px; 
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 30px; 
+            margin-bottom: 50px;
         }
         .card { 
-            background: var(--white); padding: 15px; border-radius: 8px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: center; 
+            background: var(--white); padding: 20px; border-radius: 12px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center; 
             transition: transform 0.2s ease;
         }
         .card:hover { transform: translateY(-5px); }
         .card img { 
-            width: 100%; height: 220px; object-fit: cover; 
-            border-radius: 5px; background: #eaeaea; 
+            width: 100%; height: 250px; object-fit: cover; 
+            border-radius: 8px; background: #eaeaea; 
         }
-        .card h3 { color: var(--dark); margin: 15px 0 5px 0; font-size: 1.2em; }
-        .price { font-weight: bold; color: var(--gold); font-size: 1.3em; margin: 10px 0; }
+        .card h3 { color: var(--dark); margin: 20px 0 10px 0; font-size: 1.3em; }
+        .price { font-weight: bold; color: var(--gold); font-size: 1.4em; margin: 10px 0 20px 0; }
         
-        /* Buttons */
-        .btn-add { background: var(--dark); color: var(--white); border: none; padding: 12px 20px; cursor: pointer; border-radius: 5px; width: 100%; font-size: 1em; transition: 0.3s; }
-        .btn-add:hover { background: var(--gold); color: var(--dark); font-weight: bold; }
-        .btn-order { background: #25D366; color: var(--white); border: none; padding: 15px 30px; cursor: pointer; border-radius: 5px; font-size: 1.1em; width: 100%; margin-top: 20px; font-weight: bold; transition: 0.3s; }
-        .btn-order:hover { background: #1ebe5d; }
+        .btn-add { background: var(--dark); color: var(--white); border: none; padding: 15px 20px; cursor: pointer; border-radius: 5px; width: 100%; font-size: 1.1em; transition: 0.3s; font-weight: bold;}
+        .btn-add:hover { background: var(--gold); color: var(--dark); }
+        .btn-order { background: #25D366; color: var(--white); border: none; padding: 18px 30px; cursor: pointer; border-radius: 8px; font-size: 1.2em; width: 100%; margin-top: 25px; font-weight: bold; transition: 0.3s; }
+        .btn-order:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(37,211,102,0.3);}
 
-        /* FAQ Section */
-        .faq-section {
-            background: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px;
+        /* Cart Drawer Styles */
+        .cart-overlay {
+            display: none; position: fixed; z-index: 2000; left: 0; top: 0;
+            width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(3px);
         }
-        .faq-section h2 { color: var(--dark); border-bottom: 2px solid var(--gold); padding-bottom: 10px; margin-top: 0; }
-        .faq-item { margin-bottom: 20px; }
-        .faq-item strong { display: block; color: var(--dark); font-size: 1.1em; margin-bottom: 5px; }
-        .faq-item p { margin: 0; color: #555; line-height: 1.5; }
-
-        /* Cart Section */
-        .cart-section { background: var(--white); padding: 30px; border-radius: 8px; border-top: 4px solid var(--gold); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .cart-section h2 { color: var(--dark); margin-top: 0; }
-        .cart-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
+        .cart-drawer {
+            position: fixed; top: 0; right: -100%; width: 100%; max-width: 450px;
+            height: 100vh; background: var(--white); box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+            transition: right 0.3s ease; z-index: 2001; display: flex; flex-direction: column;
+        }
+        .cart-drawer.open { right: 0; }
+        .cart-header { 
+            padding: 25px 20px; border-bottom: 3px solid var(--gold); 
+            display: flex; justify-content: space-between; align-items: center; 
+            background: var(--light-bg);
+        }
+        .cart-body { padding: 30px 20px; overflow-y: auto; flex: 1; }
         
-        /* Form Inputs */
-        .form-input { width: 100%; padding: 12px; margin-top: 15px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 5px; font-family: inherit; font-size: 1em; }
+        .cart-item { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #eee; font-size: 1.1em;}
+        .form-input { width: 100%; padding: 15px; margin-top: 20px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 8px; font-family: inherit; font-size: 1.1em; }
 
-        /* Footer */
+        /* ==========================================
+           VIEW 4: AI STYLIST PAGE (Gemini API)
+           ========================================== */
+        .ai-section {
+            background: var(--white); padding: 40px; border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); max-width: 800px; margin: 0 auto;
+        }
+        .ai-section p { font-size: 1.1em; color: #555; line-height: 1.6;}
+        .ai-input {
+            width: 100%; padding: 15px; margin-top: 10px; box-sizing: border-box; 
+            border: 2px solid #eaeaea; border-radius: 8px; font-family: inherit; 
+            font-size: 1.1em; resize: vertical; min-height: 120px;
+        }
+        .ai-input:focus { outline: none; border-color: var(--gold); }
+        .btn-ai-submit {
+            background: linear-gradient(135deg, var(--gold), #7d634b); color: var(--white); 
+            border: none; padding: 15px 30px; cursor: pointer; border-radius: 8px; 
+            font-size: 1.1em; width: 100%; margin-top: 15px; font-weight: bold; 
+            transition: 0.3s; box-shadow: 0 4px 15px rgba(156, 124, 94, 0.4);
+        }
+        .btn-ai-submit:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(156, 124, 94, 0.6); }
+        
+        .ai-response-container {
+            margin-top: 30px; padding: 25px; background: #fdfcf8; border: 1px solid #f0e6d6; 
+            border-radius: 8px; display: none;
+        }
+        .ai-response-container h3 { margin-top: 0; color: var(--dark); font-size: 1.4em; border-bottom: 2px solid var(--gold); padding-bottom: 10px;}
+        .ai-response-content { font-size: 1.1em; color: #444; line-height: 1.6; }
+        
+        /* Spinner */
+        .loader {
+            border: 4px solid #f3f3f3; border-top: 4px solid var(--gold);
+            border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite;
+            margin: 20px auto; display: none;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* AI Modals and Cart Buttons */
+        .btn-ai-care {
+            background: var(--light-bg); color: var(--dark); border: 1px solid var(--gold); 
+            padding: 10px 15px; cursor: pointer; border-radius: 5px; width: 100%; 
+            font-size: 1em; margin-top: 10px; font-weight: bold; transition: 0.3s;
+        }
+        .btn-ai-care:hover { background: #e5e0d8; }
+
+        .ai-suggestion-box {
+            margin-top: 20px; padding: 15px; background: #fdfcf8; border: 1px solid #f0e6d6; 
+            border-radius: 8px; display: none; font-size: 1.05em; color: #444; line-height: 1.5;
+        }
+
+        /* ==========================================
+           FOOTER & FLOATERS
+           ========================================== */
         footer {
-            background: var(--dark); color: var(--white); text-align: center; padding: 25px 20px; margin-top: auto;
+            background: var(--dark); color: var(--white); text-align: center; padding: 30px 20px; margin-top: auto;
         }
         footer p { margin: 5px 0; color: #b2bec3; }
 
-        /* Floating WhatsApp */
+        /* Floating Buttons */
+        .cart-float {
+            position: fixed; bottom: 95px; right: 30px; background-color: var(--dark); color: #fff;
+            padding: 15px 20px; border-radius: 50px; text-decoration: none; font-weight: bold;
+            font-size: 1.1em; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer;
+            z-index: 1000; display: flex; align-items: center; gap: 8px; transition: 0.3s;
+            border: 2px solid var(--dark);
+        }
+        .cart-float:hover { transform: scale(1.05); background-color: var(--gold); border-color: var(--gold); }
+        .cart-badge { background: #e74c3c; color: white; border-radius: 50%; padding: 2px 8px; font-size: 0.9em; margin-left: 5px;}
+
         .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: #fff;
-            padding: 15px 20px; border-radius: 50px; text-decoration: none; font-weight: bold;
+            padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold;
             font-size: 1.1em; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); transition: 0.3s; z-index: 1000;
+            display: flex; align-items: center; gap: 8px;
         }
         .whatsapp-float:hover { transform: scale(1.05); background-color: #1ebe5d; }
 
-        /* Title Bar for New Page Look */
-        .page-header {
-            display: flex; justify-content: space-between; align-items: center; 
-            border-bottom: 2px solid var(--gold); padding-bottom: 15px; margin-bottom: 25px;
-        }
-        .page-header h2 { color: var(--dark); margin: 0; font-size: 1.8em; }
-
         @media (max-width: 768px) {
-            .layout-container { flex-direction: column; }
-            .sidebar, .main-content { width: 100%; }
-            .whatsapp-float { bottom: 20px; right: 20px; padding: 12px 15px; font-size: 1em; }
+            .hero-content h2 { font-size: clamp(1.8rem, 6vw, 2.5rem); white-space: normal; } /* Allows wrapping only on very small mobile screens */
+            .hero-content p { font-size: 1.1em; }
+            .page-header { flex-direction: column; gap: 15px; text-align: center; }
+            .whatsapp-float { bottom: 20px; right: 20px; padding: 12px 20px; font-size: 1em; }
+            .faq-section, .cart-section, .ai-section { padding: 25px; }
+            .hero-buttons { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Online Furniture </h1>
-    <p>Best Manufacturing | Custom Designs | Hazaribagh</p>
+    <h1>Online Furniture</h1>
+    <p>Hazaribagh's Finest Craftsmanship</p>
 </header>
 
-<div id="view-home" class="layout-container">
-    
-    <aside class="sidebar">
-        <h3>Our Collections</h3>
-        <button class="category-btn" onclick="openCategoryPage('All')">Show All Products</button>
-        <button class="category-btn" onclick="openCategoryPage('5 Seater Sofa Set')">5 Seater Sofa Set</button>
-        <button class="category-btn" onclick="openCategoryPage('3 Seater Sofa')">3 Seater Sofa</button>
-        <button class="category-btn" onclick="openCategoryPage('Corner Sofa')">Corner Sofa</button>
-        <button class="category-btn" onclick="openCategoryPage('Circular Sofa')">Circular Sofa</button>
-        <button class="category-btn" onclick="openCategoryPage('Sofa Cum Bed')">Sofa Cum Bed</button>
-        <button class="category-btn" onclick="openCategoryPage('Chester')">Chester</button>
-        <button class="category-btn" onclick="openCategoryPage('Centre Table')">Centre Table</button>
-        <button class="category-btn" onclick="openCategoryPage('Bed')">Bed</button>
-        <button class="category-btn" onclick="openCategoryPage('Headboard')">Headboard</button>
-        <button class="category-btn" onclick="openCategoryPage('Mattress')">Mattress</button>
-        <button class="category-btn" onclick="openCategoryPage('Dressing')">Dressing</button>
-    </aside>
+<!-- ========================================== -->
+<!-- VIEW 1: FRONT PAGE (Wallpaper + FAQ)       -->
+<!-- ========================================== -->
+<div id="view-home">
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Transform Your Living Space</h2>
+            <p>Discover our exclusive range of handcrafted, premium furniture designed for elegance, comfort, and durability. Custom made to suit your style.</p>
+            <div class="hero-buttons">
+                <button class="btn-hero" onclick="showView('view-categories')">See Our Collections</button>
+                <button class="btn-hero btn-hero-ai" onclick="showView('view-ai-stylist')">✨ Ask AI Room Stylist</button>
+            </div>
+        </div>
+    </div>
 
-    <main class="main-content">
+    <div class="container">
         <div class="faq-section">
             <h2>Frequently Asked Questions</h2>
             <div class="faq-item">
                 <strong>Do you offer custom fabric choices?</strong>
-                <p>Yes, we specialize in high-quality materials. You can customize your order with specific fabrics and colors, including premium options like Sea Green suede and Teal Blue.</p>
+                <p>Yes, we specialize in high-quality fabrics for all our furniture. You can customize your order with specific materials and colors, including premium options like Sea Green suede and Teal Blue.</p>
             </div>
             <div class="faq-item">
                 <strong>What components are used in your furniture?</strong>
@@ -183,108 +353,157 @@
                 <p>Once you place an order via WhatsApp, our team will contact you to confirm details, address, and an estimated delivery timeline for your specific location.</p>
             </div>
         </div>
-    </main>
+    </div>
 </div>
 
-<div id="view-products" class="layout-container" style="display: none; flex-direction: column;">
+<!-- ========================================== -->
+<!-- VIEW 2: CATEGORIES PAGE (Menu)             -->
+<!-- ========================================== -->
+<div id="view-categories" class="container" style="display: none;">
+    <div class="page-header">
+        <h2>Our Collections</h2>
+        <button onclick="showView('view-home')" class="btn-back">🔙 Back to Home</button>
+    </div>
+
+    <div class="category-grid">
+        <div class="category-card" onclick="openCategoryPage('All')"><h3>All Products</h3></div>
+        <div class="category-card" onclick="openCategoryPage('5 Seater Sofa Set')"><h3>5 Seater Sofa Set</h3></div>
+        <div class="category-card" onclick="openCategoryPage('3 Seater Sofa')"><h3>3 Seater Sofa</h3></div>
+        <div class="category-card" onclick="openCategoryPage('Corner Sofa')"><h3>Corner Sofa</h3></div>
+        <div class="category-card" onclick="openCategoryPage('Circular Sofa')"><h3>Circular Sofa</h3></div>
+        <div class="category-card" onclick="openCategoryPage('Sofa Cum Bed')"><h3>Sofa Cum Bed</h3></div>
+        <div class="category-card" onclick="openCategoryPage('Chester')"><h3>Chester</h3></div>
+        <div class="category-card" onclick="openCategoryPage('Centre Table')"><h3>Centre Table</h3></div>
+        <div class="category-card" onclick="openCategoryPage('Bed')"><h3>Bed</h3></div>
+        <div class="category-card" onclick="openCategoryPage('Headboard')"><h3>Headboard</h3></div>
+        <div class="category-card" onclick="openCategoryPage('Mattress')"><h3>Mattress</h3></div>
+        <div class="category-card" onclick="openCategoryPage('Dressing')"><h3>Dressing</h3></div>
+    </div>
+</div>
+
+<!-- ========================================== -->
+<!-- VIEW 3: PRODUCTS & BILLING PAGE            -->
+<!-- ========================================== -->
+<div id="view-products" class="container" style="display: none;">
     
-    <div style="width: 100%;">
-        <div class="page-header">
-            <h2 id="dynamicCategoryTitle">Category Name</h2>
-            <button onclick="goBackHome()" class="btn-add" style="width: auto; margin: 0; background: var(--dark);">🔙 Back to Menu</button>
+    <div class="page-header">
+        <h2 id="dynamicCategoryTitle">Category Name</h2>
+        <button onclick="showView('view-categories')" class="btn-back">🔙 Back to Categories</button>
+    </div>
+
+    <div class="grid" id="productGrid">
+        
+        <div class="card" data-category="Corner Sofa">
+            <img src="" alt="Work Image Blank">
+            <h3>Premium L-Shape Sofa</h3>
+            <p class="price">₹45,000</p>
+            <button class="btn-add" onclick="addToCart('Premium L-Shape Sofa', 45000)">Add to Order</button>
         </div>
 
-        <div class="grid" id="productGrid">
-            
-            <div class="card" data-category="Corner Sofa">
-                <img src="" alt="Work Image Blank">
-                <h3>Premium L-Shape Sofa</h3>
-                <p class="price">₹45,000</p>
-                <button class="btn-add" onclick="addToCart('Premium L-Shape Sofa', 45000)">Add to Order</button>
-            </div>
+        <div class="card" data-category="5 Seater Sofa Set">
+            <img src="" alt="Work Image Blank">
+            <h3>5 Seater Luxury Set</h3>
+            <p class="price">₹65,000</p>
+            <button class="btn-add" onclick="addToCart('5 Seater Luxury Set', 65000)">Add to Order</button>
+        </div>
 
-            <div class="card" data-category="5 Seater Sofa Set">
-                <img src="maroon red sofa set.png" alt="Work Image Blank">
-                               <h3>5 Seater Maroon Set</h3>
-                <p class="price">₹45,000</p>
-                <button class="btn-add" onclick="addToCart('5 Seater Maroon Set', 65000)">Add to Order</button>
-                <img src="pista sofa set.png" alt="Work Image Blank">
-                               <h3>5 Seater Pista Set</h3>
-                 <p class="price">₹65,000</p>
-                <button class="btn-add" onclick="addToCart('5 Seater Pista Set', 65000)">Add to Order</button>
-                <img src="coffee sofa set.png" alt="Work Image Blank">
-                              <h3>5 Seater Coffee Set</h3>
-                  <p class="price">₹55,000</p>
-                <button class="btn-add" onclick="addToCart('5 Seater Coffee Set', 65000)">Add to Order</button>
-                <img src="brown sofa set.png" alt="Work Image Blank">
-                               <h3>5 Seater Brown Set</h3>
-                <p class="price">₹60,000</p>
-                <button class="btn-add" onclick="addToCart('5 Seater Brown Set', 65000)">Add to Order</button>
-                <img src="aesthetic sofa set.png" alt="Work Image Blank">
-                              <h3>5 Seater Aesthetic Set</h3>
-                 <p class="price">₹50,000</p>
-                <button class="btn-add" onclick="addToCart('5 Seater Aesthetic Set', 65000)">Add to Order</button>
-               <img src="blue sofa set.png" alt="Work Image Blank">
-                <h3>5 Seater Blue Set</h3>
-                <p class="price">₹67,000</p>
-                <button class="btn-add" onclick="addToCart('5 Seater Blue Set', 65000)">Add to Order</button>
-            </div>
+        <div class="card" data-category="Centre Table">
+            <img src="" alt="Work Image Blank">
+            <h3>Glass Top Centre Table</h3>
+            <p class="price">₹12,000</p>
+            <button class="btn-add" onclick="addToCart('Glass Top Centre Table', 12000)">Add to Order</button>
+        </div>
 
-            <div class="card" data-category="Centre Table">
-                <img src="black and white centre table.png" alt="Work Image Blank">
-                               <h3>B&W Centre Table</h3>
-                <p class="price">₹12,000</p>
-                <button class="btn-add" onclick="addToCart('Glass Top B&W Centre Table', 12000)">Add to Order</button>
-                <img src="coffee centre table.png" alt="Work Image Blank">
-                               <h3>Coffee Centre Table</h3>
-                <p class="price">₹10,000</p>
-                <button class="btn-add" onclick="addToCart('Glass Top Coffee Centre Table', 12000)">Add to Order</button>
-                 <img src="red velvet centre table.png" alt="Work Image Blank">
-                                <h3>Red Velvet Centre Table</h3>
-                <p class="price">₹15,000</p>
-                <button class="btn-add" onclick="addToCart('Glass Top Red Velvet Centre Table', 12000)">Add to Order</button>
-           </div>
-            
-            </div>
+    </div>
 
-        <div class="cart-section">
-            <h2>Your Order List</h2>
-            <div id="cartItems">
-                <p style="color: #777;">No items added yet.</p>
-            </div>
-            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ccc;">
-            <div style="font-size: 1.5em; font-weight: bold; text-align: right; color: var(--dark);">
-                Total: ₹<span id="totalBill">0</span>
-            </div>
-            
-            <input type="text" id="custName" class="form-input" placeholder="Your Full Name">
-            <textarea id="custAddress" class="form-input" rows="3" placeholder="Enter Complete Delivery Address"></textarea>
-            <button class="btn-order" onclick="placeOrder()">Place Order & Send Bill to WhatsApp</button>
+</div>
+
+<!-- ========================================== -->
+<!-- VIEW 4: AI STYLIST PAGE (Gemini Powered)   -->
+<!-- ========================================== -->
+<div id="view-ai-stylist" class="container" style="display: none;">
+    <div class="page-header">
+        <h2>✨ AI Room Stylist</h2>
+        <button onclick="showView('view-home')" class="btn-back">🔙 Back to Home</button>
+    </div>
+
+    <div class="ai-section">
+        <p>Not sure what to buy? Describe your room, your aesthetic (e.g., modern, cozy, small apartment), or what problem you're trying to solve. Our AI will recommend the best furniture categories from our catalog just for you!</p>
+        
+        <textarea id="aiInput" class="ai-input" placeholder="Example: I have a small living room with light grey walls and I often have guests sleeping over. What should I get?"></textarea>
+        
+        <button class="btn-ai-submit" onclick="generateAIRecommendation()">✨ Get Recommendations</button>
+        
+        <div class="loader" id="aiLoader"></div>
+        
+        <div id="aiResponseContainer" class="ai-response-container">
+            <h3>Our Styling Suggestions</h3>
+            <div id="aiResponseContent" class="ai-response-content"></div>
         </div>
     </div>
 </div>
 
+<!-- Footer -->
 <footer>
     <p>&copy; 2026 Online Furniture.</p>
     <p>All Rights Reserved. Product designs, specifications, and pricing are subject to change.</p>
 </footer>
 
+<!-- Floating Cart Button -->
+<button class="cart-float" onclick="openCart()">
+    🛒 View Cart <span class="cart-badge" id="cartBadge">0</span>
+</button>
+
+<!-- Floating WhatsApp Button -->
 <a href="https://wa.me/919905044663?text=Hi,%20I%20have%20a%20query%20regarding%20your%20furniture." class="whatsapp-float" target="_blank">
     💬 Contact for Queries
 </a>
 
-<script>
-    // --- PAGE SWAP LOGIC ---
-    function openCategoryPage(categoryName) {
-        // Hide Home, Show Products
-        document.getElementById('view-home').style.display = 'none';
-        document.getElementById('view-products').style.display = 'flex';
+<!-- Sliding Cart Drawer -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+        <h2 style="margin: 0; color: var(--dark);">🛒 Your Order</h2>
+        <span style="font-size: 2em; cursor: pointer; color: #aaa; line-height: 1;" onclick="closeCart()">&times;</span>
+    </div>
+    <div class="cart-body">
+        <div id="cartItems">
+            <p style="color: #777; text-align: center; font-size: 1.1em;">No items added yet.</p>
+        </div>
+        <hr style="margin: 30px 0; border: 0; border-top: 2px solid #eaeaea;">
+        <div style="font-size: 1.8em; font-weight: bold; text-align: right; color: var(--dark);">
+            Total: ₹<span id="totalBill">0</span>
+        </div>
         
-        // Update Title
+        <input type="text" id="custName" class="form-input" placeholder="Your Full Name">
+        <textarea id="custAddress" class="form-input" rows="3" placeholder="Enter Complete Delivery Address"></textarea>
+        <button class="btn-order" onclick="placeOrder()">Place Order & Send Bill to WhatsApp</button>
+        
+        <button class="btn-ai-care" style="margin-top: 15px;" onclick="generateCartMatch()">✨ Suggest Matching Decor based on my Cart</button>
+        <div id="cartAiLoader" class="loader"></div>
+        <div id="cartAiSuggestion" class="ai-suggestion-box"></div>
+    </div>
+</div>
+
+<script>
+    // --- API CONFIGURATION ---
+    const apiKey = ""; // API key is injected by the execution environment
+
+    // --- VIEW SWITCHING LOGIC ---
+    function showView(viewId) {
+        document.getElementById('view-home').style.display = 'none';
+        document.getElementById('view-categories').style.display = 'none';
+        document.getElementById('view-products').style.display = 'none';
+        document.getElementById('view-ai-stylist').style.display = 'none';
+        
+        document.getElementById(viewId).style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openCategoryPage(categoryName) {
         const titleElement = document.getElementById('dynamicCategoryTitle');
         titleElement.innerText = categoryName === 'All' ? 'All Products' : categoryName + ' Collection';
 
-        // Filter the works
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             if (categoryName === 'All' || card.getAttribute('data-category') === categoryName) {
@@ -293,16 +512,18 @@
                 card.style.display = 'none';
             }
         });
-
-        // Scroll automatically to the top
-        window.scrollTo(0, 0);
+        showView('view-products');
     }
 
-    function goBackHome() {
-        // Hide Products, Show Home
-        document.getElementById('view-products').style.display = 'none';
-        document.getElementById('view-home').style.display = 'flex';
-        window.scrollTo(0, 0);
+    // --- CART DRAWER LOGIC ---
+    function openCart() {
+        document.getElementById('cartOverlay').style.display = 'block';
+        setTimeout(() => { document.getElementById('cartDrawer').classList.add('open'); }, 10);
+    }
+
+    function closeCart() {
+        document.getElementById('cartDrawer').classList.remove('open');
+        setTimeout(() => { document.getElementById('cartOverlay').style.display = 'none'; }, 300);
     }
 
     // --- CART AND WHATSAPP LOGIC ---
@@ -311,12 +532,14 @@
     function addToCart(name, price) {
         cart.push({name, price});
         updateCartUI();
-        document.querySelector('.cart-section').scrollIntoView({ behavior: 'smooth' });
+        openCart(); // Instantly opens the sliding drawer when added
     }
 
     function updateCartUI() {
         const cartDiv = document.getElementById('cartItems');
         const totalSpan = document.getElementById('totalBill');
+        const cartBadge = document.getElementById('cartBadge');
+        
         cartDiv.innerHTML = '';
         let total = 0;
 
@@ -329,8 +552,10 @@
                 </div>`;
         });
 
-        if (cart.length === 0) cartDiv.innerHTML = '<p style="color: #777;">No items added yet.</p>';
+        if (cart.length === 0) cartDiv.innerHTML = '<p style="color: #777; text-align: center; font-size: 1.1em;">No items added yet.</p>';
+        
         totalSpan.innerText = total.toLocaleString('en-IN');
+        cartBadge.innerText = cart.length; // Updates the little red number on the floating button
     }
 
     function placeOrder() {
@@ -355,6 +580,120 @@
         const waLink = `https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`;
         
         window.open(waLink, '_blank');
+    }
+
+    // --- GEMINI API INTEGRATION (AI Stylist) ---
+    async function fetchWithBackoff(url, options, retries = 5, delay = 1000) {
+        try {
+            const res = await fetch(url, options);
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            return await res.json();
+        } catch (error) {
+            if (retries > 0) {
+                await new Promise(r => setTimeout(r, delay));
+                return fetchWithBackoff(url, options, retries - 1, delay * 2);
+            }
+            throw error;
+        }
+    }
+
+    async function generateAIRecommendation() {
+        const inputField = document.getElementById('aiInput');
+        const userInput = inputField.value.trim();
+        const loader = document.getElementById('aiLoader');
+        const responseContainer = document.getElementById('aiResponseContainer');
+        const responseContent = document.getElementById('aiResponseContent');
+
+        if (!userInput) {
+            alert("Please describe your room or what you are looking for first.");
+            return;
+        }
+
+        // Setup UI for loading state
+        loader.style.display = 'block';
+        responseContainer.style.display = 'none';
+
+        const systemPrompt = `You are a professional interior designer helping customers shop at 'Online Furniture'. 
+        Read the user's room description and recommend 2 to 3 specific furniture categories from our catalog. 
+        Our available categories are: 5 Seater Sofa Set, 3 Seater Sofa, Corner Sofa, Circular Sofa, Sofa Cum Bed, Chester, Centre Table, Bed, Headboard, Mattress, and Dressing.
+        Keep the response warm, encouraging, and brief (under 150 words). Format the output using bullet points and bold text for category names.`;
+
+        const payload = {
+            contents: [{ parts: [{ text: userInput }] }],
+            systemInstruction: { parts: [{ text: systemPrompt }] }
+        };
+
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+        try {
+            const result = await fetchWithBackoff(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            let textResponse = result.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't generate a recommendation right now.";
+            
+            // Format basic markdown to HTML
+            textResponse = textResponse.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold
+            textResponse = textResponse.replace(/\*(.*?)\*/g, '<em>$1</em>'); // Italics
+            textResponse = textResponse.replace(/\n/g, '<br>'); // Line breaks
+            
+            responseContent.innerHTML = textResponse;
+            responseContainer.style.display = 'block';
+        } catch (error) {
+            responseContent.innerHTML = "<em>We're experiencing a brief technical issue connecting to our AI Stylist. Please try again in a moment.</em>";
+            responseContainer.style.display = 'block';
+        } finally {
+            loader.style.display = 'none';
+        }
+    }
+
+    // --- NEW GEMINI API INTEGRATIONS ---
+
+    // 1. Cart Matchmaker Feature
+    async function generateCartMatch() {
+        if (cart.length === 0) {
+            alert("Please add some items to your cart first so our AI can suggest a match!");
+            return;
+        }
+
+        const loader = document.getElementById('cartAiLoader');
+        const suggestionBox = document.getElementById('cartAiSuggestion');
+        
+        loader.style.display = 'block';
+        suggestionBox.style.display = 'none';
+
+        const itemNames = cart.map(item => item.name).join(', ');
+        const systemPrompt = `You are an expert interior designer. The user has the following furniture items in their cart: ${itemNames}. 
+        Suggest exactly ONE complementary item category to add from our store (Choose from: 5 Seater Sofa Set, 3 Seater Sofa, Corner Sofa, Circular Sofa, Sofa Cum Bed, Chester, Centre Table, Bed, Headboard, Mattress, Dressing). 
+        Explain briefly (1-2 sentences) why it completes their look. Format: **[Category Name]**: [Your explanation].`;
+
+        const payload = {
+            contents: [{ parts: [{ text: "What else should I buy to match my cart?" }] }],
+            systemInstruction: { parts: [{ text: systemPrompt }] }
+        };
+
+        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+        try {
+            const result = await fetchWithBackoff(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            let textResponse = result.candidates?.[0]?.content?.parts?.[0]?.text || "Consider adding a complementary accessory to complete the room!";
+            textResponse = textResponse.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
+            suggestionBox.innerHTML = `<strong>✨ AI Suggestion:</strong><br>${textResponse}`;
+            suggestionBox.style.display = 'block';
+        } catch (error) {
+            suggestionBox.innerHTML = "<em>Our AI Matchmaker is currently taking a break. Please try again later.</em>";
+            suggestionBox.style.display = 'block';
+        } finally {
+            loader.style.display = 'none';
+        }
     }
 </script>
 
