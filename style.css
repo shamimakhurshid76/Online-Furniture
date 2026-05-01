@@ -1,0 +1,12 @@
+/* Sets the size of your furniture logo */
+.logo-img {
+    width: 180px;   /* Change this number to resize your logo */
+    height: auto;    /* Keeps the image from looking stretched */
+    display: block;
+}
+
+/* Adds spacing around the logo */
+.logo-box {
+    padding: 10px;
+    background-color: #ffffff; /* Use white to hide the JPEG's background box */
+}
