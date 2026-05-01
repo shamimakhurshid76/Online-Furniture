@@ -1,7 +1,7 @@
 # Online Furniture 🛋️
 **Premium Craftsmanship. Direct to Your Home.**
 
-Online Furniture is a specialized e-commerce platform for **Bhola Sofa Centre**, based in Hazaribagh. We provide high-quality, custom-made furniture with a focus on luxury L-shape sofas and premium upholstery materials.
+Online Furniture is a specialized e-commerce platform , based in Hazaribagh. We provide high-quality, custom-made furniture with a focus on luxury L-shape sofas and premium upholstery materials.
 
 ## 🚀 Features
 - **Digital Showroom:** High-resolution gallery featuring our exclusive collection (Royal Curve, Premium Headrest, and Butterfly Handle designs).
@@ -24,7 +24,7 @@ Online Furniture is a specialized e-commerce platform for **Bhola Sofa Centre**,
 
 ## ⚖️ License & Intellectual Property
 - **Code:** This project is licensed under the [MIT License](LICENSE).
-- **Designs & Media:** All furniture designs, product photography, and branding are the intellectual property of **Mr. Nadeem & Bhola Sofa Centre**. Unauthorized use of images for commercial purposes is strictly prohibited.
+- **Designs & Media:** All furniture designs, product photography, and branding are the intellectual property of **Mr. Nadeem **. Unauthorized use of images for commercial purposes is strictly prohibited.
 
 ## 📞 Contact
 **Owner:** Mr. Nadeem  
