@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Furniture | Order Now</title>
+    <title>The Online Furniture | Order Now</title>
     
     <!-- Elegant Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,14 +22,13 @@
         }
         
         body
-        <header class="main-header">
+       <header class="main-header">
     <div class="logo-box">
         <a href="index.html">
             <img src="logo.jpeg" alt="Online Furniture Logo" class="logo-img">
         </a>
     </div>
-</header>
-        { 
+</header>{ 
             font-family: 'Montserrat', sans-serif; 
             margin: 0; 
             background: var(--light-bg); 
@@ -127,6 +126,7 @@
             cursor: pointer;
             border: 1px solid #eaeaea;
             transition: all 0.3s ease;
+            position: relative; /* Added to keep the Coming Soon badge in place */
         }
         .category-card:hover {
             transform: translateY(-5px);
@@ -134,6 +134,14 @@
             box-shadow: 0 8px 25px rgba(156, 124, 94, 0.2);
         }
         .category-card h3 { margin: 0; color: var(--dark); font-size: 1.3em; }
+
+        /* Coming Soon Styles */
+        .category-card.coming-soon { opacity: 0.65; background: #fdfdfd; cursor: not-allowed; }
+        .category-card.coming-soon:hover { transform: none; border-color: #eaeaea; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .coming-soon-badge {
+            position: absolute; top: 10px; right: 10px; background: #e74c3c; color: white;
+            font-size: 0.75em; padding: 4px 8px; border-radius: 4px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;
+        }
 
         /* ==========================================
            VIEW 3: PRODUCTS & BILLING PAGE
@@ -206,6 +214,14 @@
         .gallery-details p.gallery-price { color: var(--gold); font-weight: bold; font-size: 1.3em; margin: 0 0 15px 0; }
         .gallery-details p.gallery-desc { color: #555; font-size: 1.05em; line-height: 1.6; margin-bottom: 20px; }
         
+        /* Color Swatches Styles */
+        .color-thumb {
+            width: 45px; height: 45px; border-radius: 50%; object-fit: cover;
+            cursor: pointer; border: 2px solid transparent; transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); flex-shrink: 0;
+        }
+        .color-thumb.active-color { border-color: var(--gold); transform: scale(1.15); box-shadow: 0 4px 10px rgba(156, 124, 94, 0.4); }
+
         #galleryModal .close-btn {
             position: absolute; top: 15px; right: 25px; color: #fff; font-size: 40px;
             font-weight: bold; cursor: pointer; transition: 0.3s; z-index: 10000;
@@ -317,7 +333,7 @@
 <body>
 
 <header>
-    <h1>Online Furniture</h1>
+    <h1>The Online Furniture</h1>
     <p class="main-subtitle">Hazaribagh's Finest Craftsmanship</p>
     <p class="dynamic-statement">Transform your living space by enrolling our trending <span id="changing-category" class="changing-text">sofa</span> and more.</p>
 </header>
@@ -357,6 +373,11 @@
                         "Side profile: Showcasing the elegant rolled arms and brass legs.",
                         "Detail angle: Deep button tufting crafted to perfection."
                      ]'
+                     data-colors='[
+                        {"name": "Sea Green", "img": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"},
+                        {"name": "Slate Grey", "img": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80"},
+                        {"name": "Ivory White", "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"}
+                     ]'
                      onclick="openGallery(this, 'Signature Velvet Sofa', 75000)">
                 <h3>Signature Velvet Sofa</h3>
                 <p class="price">₹75,000</p>
@@ -373,6 +394,10 @@
                      data-descs='[
                         "Front view: Clean lines and a beautifully padded fabric headboard.",
                         "Room setting: See how it elevates a modern minimalist bedroom."
+                     ]'
+                     data-colors='[
+                        {"name": "Oatmeal Beige", "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"},
+                        {"name": "Classic Ash", "img": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80"}
                      ]'
                      onclick="openGallery(this, 'Luxury Minimalist Bed', 95000)">
                 <h3>Luxury Minimalist Bed</h3>
@@ -391,6 +416,10 @@
                         "Front angle: The quintessential Chesterfield design in rich upholstery.",
                         "Side angle: Built for majestic durability and grand aesthetics."
                      ]'
+                     data-colors='[
+                        {"name": "Charcoal Black", "img": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80"},
+                        {"name": "Emerald Green", "img": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"}
+                     ]'
                      onclick="openGallery(this, 'Royal Chester Couch', 85000)">
                 <h3>Royal Chester Couch</h3>
                 <p class="price">₹85,000</p>
@@ -407,6 +436,10 @@
                      data-descs='[
                         "Top view: 12mm toughened glass reflecting pure elegance.",
                         "Base view: Intricate metallic gold curves providing sturdy support."
+                     ]'
+                     data-colors='[
+                        {"name": "Gold Base", "img": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80"},
+                        {"name": "Silver Base", "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"}
                      ]'
                      onclick="openGallery(this, 'Modern Glass Table', 25000)">
                 <h3>Modern Glass Table</h3>
@@ -425,6 +458,10 @@
                         "Full view: Space-saving L-shape perfection for your lounge.",
                         "Cushion detail: Washable covers made from stain-resistant fabrics."
                      ]'
+                     data-colors='[
+                        {"name": "Navy Blue", "img": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=600&q=80"},
+                        {"name": "Sea Green", "img": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"}
+                     ]'
                      onclick="openGallery(this, 'Premium L-Shape Sofa', 65000)">
                 <h3>Premium L-Shape Sofa</h3>
                 <p class="price">₹65,000</p>
@@ -441,6 +478,10 @@
                      data-descs='[
                         "Front angle: Hand-carved details in a rich dark walnut polish.",
                         "Setup view: Beautifully transforming a standard bed frame."
+                     ]'
+                     data-colors='[
+                        {"name": "Dark Walnut", "img": "https://images.unsplash.com/photo-1540574163026-643ea20d0d30?auto=format&fit=crop&w=600&q=80"},
+                        {"name": "Black Polish", "img": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80"}
                      ]'
                      onclick="openGallery(this, 'Elegant Wooden Headboard', 18000)">
                 <h3>Elegant Wooden Headboard</h3>
@@ -459,6 +500,10 @@
                         "Top view: Premium breathable fabric for a cool night sleep.",
                         "Side profile: 8-inch dual comfort with memory foam layers."
                      ]'
+                     data-colors='[
+                        {"name": "Standard White", "img": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"},
+                        {"name": "Premium Grey", "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"}
+                     ]'
                      onclick="openGallery(this, 'Orthopedic King Mattress', 35000)">
                 <h3>Orthopedic King Mattress</h3>
                 <p class="price">₹35,000</p>
@@ -476,6 +521,10 @@
                         "Front view: Tall profile mirror enhancing room brightness.",
                         "Storage view: Soft-close drawers and hidden shelving details."
                      ]'
+                     data-colors='[
+                        {"name": "Matte Black", "img": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80"},
+                        {"name": "Ash Wood", "img": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80"}
+                     ]'
                      onclick="openGallery(this, 'Chic Dressing Unit', 42000)">
                 <h3>Chic Dressing Unit</h3>
                 <p class="price">₹42,000</p>
@@ -492,6 +541,10 @@
                      data-descs='[
                         "Full angle: A unique conversation piece with semi-circular seating.",
                         "Fabric detail: Impeccably tailored upholstery and tufting."
+                     ]'
+                     data-colors='[
+                        {"name": "Oatmeal Beige", "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"},
+                        {"name": "Sea Green", "img": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80"}
                      ]'
                      onclick="openGallery(this, 'Tufted Circular Sofa', 55000)">
                 <h3>Tufted Circular Sofa</h3>
@@ -511,6 +564,11 @@
                         "Sofa Setup: A highly stylish and comfortable 3-seater for the day.",
                         "Mechanism: Heavy-duty metal pull-out system in action.",
                         "Bed Setup: Transformed into a spacious double bed in seconds."
+                     ]'
+                     data-colors='[
+                        {"name": "Ash Grey", "img": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80"},
+                        {"name": "Charcoal", "img": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80"},
+                        {"name": "Beige", "img": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"}
                      ]'
                      onclick="openGallery(this, 'Modern Sofa Cum Bed', 48000)">
                 <h3>Modern Sofa Cum Bed</h3>
@@ -610,7 +668,7 @@
 
 <!-- Footer -->
 <footer>
-    <p>&copy; 2026 Online Furniture.</p>
+    <p>&copy; 2026 The Online Furniture.</p>
     <p>All Rights Reserved. Product designs, specifications, and pricing are subject to change.</p>
 </footer>
 
@@ -636,6 +694,15 @@
             <h3 id="galleryTitle">Product Title</h3>
             <p class="gallery-price" id="galleryPrice">₹0</p>
             <p class="gallery-desc" id="galleryDesc" style="min-height: 50px; transition: 0.3s opacity;">Product description and specialities go here...</p>
+            
+            <!-- Color Variants Section -->
+            <div id="galleryColorsSection" style="margin-bottom: 15px; display: none;">
+                <p style="margin: 0 0 10px 0; font-weight: 600; color: var(--dark); font-size: 1.05em;">Available Colors:</p>
+                <div id="galleryColorThumbs" style="display: flex; gap: 12px; overflow-x: auto; padding-bottom: 10px;">
+                    <!-- Thumbnails generated by JS -->
+                </div>
+            </div>
+
             <button class="btn-add" id="galleryAddBtn" style="margin-top: 10px; background: #25D366; color: white;">🛒 Add to Order Instantly</button>
         </div>
     </div>
@@ -684,8 +751,55 @@
     </div>
 </div>
 
+<!-- ========================================== -->
+<!-- CUSTOM ALERT MODAL (Replaces default alerts) -->
+<!-- ========================================== -->
+<div id="customAlertModal" style="display: none; position: fixed; z-index: 10005; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center;">
+    <div style="background: white; padding: 30px; border-radius: 12px; max-width: 400px; width: 85%; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+        <div style="font-size: 3em; margin-bottom: 10px;">🔔</div>
+        <h3 style="margin: 0 0 15px 0; color: var(--dark); font-size: 1.5em; font-family: 'Playfair Display', serif;">Notice</h3>
+        <p id="customAlertText" style="color: #555; font-size: 1.1em; line-height: 1.5; margin-bottom: 25px;">Message goes here</p>
+        <button onclick="closeCustomAlert()" style="background: var(--gold); color: white; border: none; padding: 12px 25px; border-radius: 8px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: 0.3s; width: 100%;">Got it!</button>
+    </div>
+</div>
+
 <script>
     const apiKey = ""; // API key is injected by the execution environment
+
+    // --- CUSTOM ALERT LOGIC ---
+    function showCustomAlert(message) {
+        document.getElementById('customAlertText').innerText = message;
+        document.getElementById('customAlertModal').style.display = 'flex';
+    }
+
+    function closeCustomAlert() {
+        document.getElementById('customAlertModal').style.display = 'none';
+    }
+
+    // ===================================================================
+    // --- COMING SOON CONFIGURATION ---
+    // TO ACTIVATE A CATEGORY: Simply delete its name from the list below!
+    // ===================================================================
+    const comingSoonCategories = [
+        '3 Seater Sofa', 'Circular Sofa', 'Sofa Cum Bed', 
+        'Chester', 'Centre Table', 'Headboard', 
+        'Mattress', 'Dressing'
+    ];
+
+    function applyComingSoonStatus() {
+        const cards = document.querySelectorAll('.category-card');
+        cards.forEach(card => {
+            const catName = card.querySelector('h3').innerText;
+            if (comingSoonCategories.includes(catName)) {
+                card.classList.add('coming-soon');
+                card.innerHTML += '<span class="coming-soon-badge">Soon</span>';
+                card.onclick = function(e) {
+                    e.preventDefault(); // Stop any other click actions
+                    showCustomAlert("The " + catName + " collection is launching very soon! Stay tuned.");
+                };
+            }
+        });
+    }
 
     // --- AUTO-GENERATE 20 ITEMS FOR ALL CATEGORIES ---
     function populateCatalog() {
@@ -702,6 +816,9 @@
         ];
 
         categories.forEach((category, catIndex) => {
+            // Skip generating products if the category is marked as "Coming Soon"
+            if (comingSoonCategories.includes(category)) return;
+
             // Loop 20 times for each category
             for(let i = 1; i <= 20; i++) {
                 // Grab 3 distinct images for angles
@@ -718,12 +835,18 @@
                     "Side angle: Revealing the ergonomic profile and space-saving elegance.", 
                     "Close up: Highlighting the premium material texture and durability."
                 ]`;
+                const colorArrayJson = `[
+                    {"name": "Primary Option", "img": "${img1}"},
+                    {"name": "Variant B", "img": "${img2}"},
+                    {"name": "Variant C", "img": "${img3}"}
+                ]`;
                 
                 const html = `
                 <div class="card" data-category="${category}">
                     <img src="${img1}" alt="${category} ${i}" class="zoomable-img" 
                          data-images='${imageArrayJson}' 
                          data-descs='${descArrayJson}'
+                         data-colors='${colorArrayJson}'
                          onclick="openGallery(this, '${category} - Design ${i}', ${price})">
                     <h3>${category} - Design ${i}</h3>
                     <p class="price">₹${price.toLocaleString('en-IN')}</p>
@@ -736,10 +859,14 @@
     }
 
     // Run the catalog builder as soon as the page loads!
-    window.onload = populateCatalog;
+    window.onload = function() {
+        applyComingSoonStatus();
+        populateCatalog();
+    };
 
     // --- DYNAMIC TEXT CHANGER (TRENDING CATEGORIES) ---
-    const changingWords = ["sofa", "chester", "bed", "dressing", "dining set", "glass table"];
+    // Updated to only advertise currently active categories
+    const changingWords = ["5 seater sofa", "corner sofa", "bed", "living room sets"]; 
     let wordIndex = 0;
     const changingElement = document.getElementById("changing-category");
 
@@ -757,20 +884,66 @@
     let currentImages = [];
     let currentDescs = [];
     let currentIndex = 0;
+    let currentSelectedColor = "";
 
     function openGallery(imgElement, title, price) {
         // Read data from the clicked image
         currentImages = JSON.parse(imgElement.getAttribute('data-images'));
         currentDescs = JSON.parse(imgElement.getAttribute('data-descs'));
+        const colorsData = imgElement.getAttribute('data-colors');
         currentIndex = 0;
+        currentSelectedColor = "";
 
         // Set text details
         document.getElementById('galleryTitle').innerText = title;
         document.getElementById('galleryPrice').innerText = `₹${price.toLocaleString('en-IN')}`;
         
-        // Setup "Add to Order" button inside gallery
+        // Handle Color Options dynamically
+        const colorsSection = document.getElementById('galleryColorsSection');
+        const colorThumbs = document.getElementById('galleryColorThumbs');
+        colorThumbs.innerHTML = '';
+        
+        if (colorsData) {
+            const colors = JSON.parse(colorsData);
+            if (colors.length > 0) {
+                colorsSection.style.display = 'block';
+                colors.forEach((colorObj, idx) => {
+                    const thumb = document.createElement('img');
+                    thumb.src = colorObj.img;
+                    thumb.title = colorObj.name;
+                    thumb.className = 'color-thumb';
+                    
+                    if (idx === 0) {
+                        thumb.classList.add('active-color');
+                        currentSelectedColor = colorObj.name;
+                    }
+                    
+                    thumb.onclick = () => {
+                        // Change the main picture and text
+                        document.getElementById('galleryImg').src = colorObj.img;
+                        document.getElementById('galleryDesc').innerText = `Viewing Color Variant: ${colorObj.name} - Add to Order below!`;
+                        currentSelectedColor = colorObj.name;
+                        
+                        // Highlight the selected thumbnail
+                        document.querySelectorAll('.color-thumb').forEach(t => t.classList.remove('active-color'));
+                        thumb.classList.add('active-color');
+                    };
+                    colorThumbs.appendChild(thumb);
+                });
+            } else {
+                colorsSection.style.display = 'none';
+            }
+        } else {
+            colorsSection.style.display = 'none';
+        }
+
+        // Setup "Add to Order" button inside gallery to INCLUDE THE CHOSEN COLOR
         document.getElementById('galleryAddBtn').onclick = () => {
-            addToCart(title, price);
+            let finalTitle = title;
+            if (currentSelectedColor) {
+                finalTitle += ` (${currentSelectedColor})`;
+            }
+            addToCart(finalTitle, price);
             closeGallery();
         };
 
@@ -922,7 +1095,7 @@
         const address = document.getElementById('custAddress').value; 
 
         if (!name || !address || cart.length === 0) {
-            alert("Please add items to your cart and enter both your name and address.");
+            showCustomAlert("Please add items to your cart and enter both your name and address.");
             return;
         }
 
@@ -933,7 +1106,7 @@
             total += item.price;
         });
 
-        const message = `*NEW ORDER - ONLINE FURNITURE*\n\n*Customer Name:* ${name}\n*Delivery Address:* ${address}\n\n*Items Ordered:*\n${itemDetails}\n*TOTAL BILL:* ₹${total.toLocaleString('en-IN')}\n\n_Please confirm this order._`;
+        const message = `*NEW ORDER - THE ONLINE FURNITURE*\n\n*Customer Name:* ${name}\n*Delivery Address:* ${address}\n\n*Items Ordered:*\n${itemDetails}\n*TOTAL BILL:* ₹${total.toLocaleString('en-IN')}\n\n_Please confirm this order._`;
         
         const myNumber = "919905044663"; 
         const waLink = `https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`;
@@ -964,14 +1137,14 @@
         const responseContent = document.getElementById('aiResponseContent');
 
         if (!userInput) {
-            alert("Please describe your room or what you are looking for first.");
+            showCustomAlert("Please describe your room or what you are looking for first.");
             return;
         }
 
         loader.style.display = 'block';
         responseContainer.style.display = 'none';
 
-        const systemPrompt = `You are a professional interior designer helping customers shop at 'Online Furniture'. 
+        const systemPrompt = `You are a professional interior designer helping customers shop at 'The Online Furniture'. 
         Read the user's room description and recommend 2 to 3 specific furniture categories from our catalog. 
         Our available categories are: 5 Seater Sofa Set, 3 Seater Sofa, Corner Sofa, Circular Sofa, Sofa Cum Bed, Chester, Centre Table, Bed, Headboard, Mattress, and Dressing.
         Keep the response warm, encouraging, and brief (under 150 words). Format the output using bullet points and bold text for category names.`;
