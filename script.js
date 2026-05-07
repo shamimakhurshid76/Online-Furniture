@@ -35,20 +35,6 @@ function applyComingSoonStatus() {
     });
 }
 
-// --- AUTO-GENERATE REAL ITEMS AND PLACEHOLDERS ---
-function populateCatalog() {
-    const grid = document.getElementById('productGrid');
-    grid.innerHTML = ''; 
-    const categories = ['5 Seater Sofa Set', '3 Seater Sofa', 'Corner Sofa', 'Circular Sofa', 'Sofa Cum Bed', 'Chester', 'Centre Table', 'Bed', 'Headboard', 'Mattress', 'Dressing'];
-
-    // High quality placeholder pictures for other categories
-    const sampleImages = [
-        'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80'
-    ];
-
     // YOUR REAL SOFA SETS FOR THE 5-SEATER COLUMN
     const real5Seaters = [
         { name: "53 No. Model (Maroon)", price: 75000, imgs: '["image1.1.png", "image1.2.png", "image1.3.png", "image1.4.png"]', descs: '["Full Set View", "3-Seater Angled", "3-Seater Front", "1-Seater Profile"]' },
