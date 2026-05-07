@@ -49,7 +49,7 @@ function populateCatalog() {
         'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80'
     ];
 
-    // YOUR REAL 11 SOFA SETS FOR THE 5-SEATER COLUMN
+    // YOUR REAL SOFA SETS FOR THE 5-SEATER COLUMN
     const real5Seaters = [
         { name: "53 No. Model (Maroon)", price: 75000, imgs: '["image1.1.png", "image1.2.png", "image1.3.png", "image1.4.png"]', descs: '["Full Set View", "3-Seater Angled", "3-Seater Front", "1-Seater Profile"]' },
         { name: "53 No. Model (Golden Brown)", price: 75000, imgs: '["image10.1.png", "image10.2.png", "image10.3.png", "image10.4.png", "image10.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
@@ -61,7 +61,14 @@ function populateCatalog() {
         { name: "53 No. Model (Teal Blue)", price: 75000, imgs: '["image7.1.png", "image7.2.png", "image7.3.png", "image7.4.png", "image7.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
         { name: "53 No. Model (Deep Magenta)", price: 75000, imgs: '["image8.1.png", "image8.2.png", "image8.3.png", "image8.4.png", "image8.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
         { name: "53 No. Model (Olive Green)", price: 75000, imgs: '["image9.1.png", "image9.2.png", "image9.3.png", "image9.4.png", "image9.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
-        { name: "Diamond Stitch Sofa (Textured Beige)", price: 70000, imgs: '["image11.1.png", "image11.2.png", "image11.3.png", "image11.4.png", "image11.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' }
+        { name: "Diamond Stitch Sofa (Textured Beige)", price: 70000, imgs: '["image11.1.png", "image11.2.png", "image11.3.png", "image11.4.png", "image11.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
+        { name: "Bullet Sofa (Brown Fabric)", price: 68000, imgs: '["image12.1.png", "image12.2.png", "image12.3.png", "image12.4.png"]', descs: '["Full Set View: A sleek, modern 5-seater bullet sofa with clean geometric lines.", "3-Seater Front: Featuring a distinctive criss-cross tufted backrest.", "1-Seater Front: A comfortable, stylish individual seat with broad armrests.", "Side Profile: Minimalist side view highlighting the sturdy boxy armrests."]' },
+        { name: "Bullet Sofa (Navy Blue)", price: 68000, imgs: '["image13.1.png", "image13.2.png", "image13.3.png", "image13.4.png"]', descs: '["Full Set View: A sleek, modern 5-seater bullet sofa with clean geometric lines.", "3-Seater Front: Featuring a distinctive criss-cross tufted backrest.", "1-Seater Front: A comfortable, stylish individual seat with broad armrests.", "Side Profile: Minimalist side view highlighting the sturdy boxy armrests."]' },
+        { name: "Bullet Sofa (Charcoal Grey)", price: 68000, imgs: '["image14.1.png", "image14.2.png", "image14.3.png", "image14.4.png"]', descs: '["Full Set View: A sleek, modern 5-seater bullet sofa with clean geometric lines.", "3-Seater Front: Featuring a distinctive criss-cross tufted backrest.", "1-Seater Front: A comfortable, stylish individual seat with broad armrests.", "Side Profile: Minimalist side view highlighting the sturdy boxy armrests."]' },
+        { name: "Bullet Sofa (Mocha Brown)", price: 68000, imgs: '["image15.1.png", "image15.2.png", "image15.3.png", "image15.4.png"]', descs: '["Full Set View: A sleek, modern 5-seater bullet sofa with clean geometric lines.", "3-Seater Front: Featuring a clean vertical channel tufted backrest.", "1-Seater Front: A comfortable, stylish individual seat with broad armrests.", "Side Profile: Minimalist side view highlighting the sturdy boxy armrests."]' },
+        { name: "Bullet Sofa (Teal Green)", price: 68000, imgs: '["image16.1.png", "image16.2.png", "image16.3.png", "image16.4.png"]', descs: '["Full Set View: A sleek, modern 5-seater bullet sofa with clean geometric lines.", "3-Seater Front: Featuring a distinctive criss-cross tufted backrest.", "1-Seater Front: A comfortable, stylish individual seat with broad armrests.", "Side Profile: Minimalist side view highlighting the sturdy boxy armrests."]' },
+        { name: "Bullet Sofa (Ocean Blue)", price: 68000, imgs: '["image17.1.png", "image17.2.png", "image17.3.png", "image17.4.png"]', descs: '["Full Set View: A sleek, modern 5-seater bullet sofa with clean geometric lines.", "3-Seater Front: Featuring a distinctive criss-cross tufted backrest.", "1-Seater Front: A comfortable, stylish individual seat with broad armrests.", "Side Profile: Minimalist side view highlighting the sturdy boxy armrests."]' },
+        { name: "Bullet Sofa (Sapphire Blue)", price: 68000, imgs: '["image18.1.png", "image18.2.png", "image18.3.png", "image18.4.png"]', descs: '["Full Set View: A sleek, modern 5-seater bullet sofa with clean geometric lines.", "3-Seater Front: Featuring a distinctive criss-cross tufted backrest.", "1-Seater Front: A comfortable, stylish individual seat with broad armrests.", "Side Profile: Minimalist side view highlighting the sturdy boxy armrests."]' }
     ];
 
     categories.forEach((category, catIndex) => {
@@ -71,7 +78,7 @@ function populateCatalog() {
         // IF WE ARE IN THE 5 SEATER CATEGORY -> LOAD YOUR REAL PRODUCTS
         if (category === '5 Seater Sofa Set') {
             real5Seaters.forEach((item) => {
-                const firstImage = JSON.parse(item.imgs)[0]; // Pulls the main picture (e.g., image10.1.jpg)
+                const firstImage = JSON.parse(item.imgs)[0]; // Pulls the main picture
                 const html = `
                 <div class="card" data-category="${category}">
                     <img src="${firstImage}" alt="${item.name}" class="zoomable-img" 
