@@ -51,17 +51,17 @@ function populateCatalog() {
 
     // YOUR REAL 11 SOFA SETS FOR THE 5-SEATER COLUMN
     const real5Seaters = [
-        { name: "53 No. Model (Maroon)", price: 75000, imgs: '["image1.1.jpg", "image1.2.jpg", "image1.3.png", "image1.4.png"]', descs: '["Full Set View", "3-Seater Angled", "3-Seater Front", "1-Seater Profile"]' },
-        { name: "53 No. Model (Golden Brown)", price: 75000, imgs: '["image10.1.jpg", "image10.2.png", "image10.3.png", "image10.4.png", "image10.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
-        { name: "53 No. Model (Classic Black)", price: 75000, imgs: '["image2.1.jpg", "image2.2.png", "image2.3.png", "image2.4.jpg", "image2.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
-        { name: "53 No. Model (Royal Purple)", price: 75000, imgs: '["image3.1.jpg", "image3.2.png", "image3.3.png", "image3.4.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile"]' },
-        { name: "53 No. Model (Cream & Tan)", price: 75000, imgs: '["image4.1.jpg", "image4.2.png", "image4.3.png", "image4.4.png", "image4.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
-        { name: "53 No. Model (Light Tan)", price: 75000, imgs: '["image5.1.jpg", "image5.2.png", "image5.3.png", "image5.4.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile"]' },
-        { name: "53 No. Model (Emerald Green)", price: 75000, imgs: '["image6.1.jpg", "image6.2.png", "image6.3.png", "image6.4.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile"]' },
-        { name: "53 No. Model (Teal Blue)", price: 75000, imgs: '["image7.1.jpg", "image7.2.png", "image7.3.png", "image7.4.png", "image7.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
-        { name: "53 No. Model (Deep Magenta)", price: 75000, imgs: '["image8.1.jpg", "image8.2.png", "image8.3.png", "image8.4.png", "image8.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
-        { name: "53 No. Model (Olive Green)", price: 75000, imgs: '["image9.1.jpg", "image9.2.png", "image9.3.png", "image9.4.png", "image9.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
-        { name: "Diamond Stitch Sofa (Textured Beige)", price: 70000, imgs: '["image11.1.jpg", "image11.2.png", "image11.3.png", "image11.4.png", "image11.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' }
+        { name: "53 No. Model (Maroon)", price: 75000, imgs: '["image1.1.png", "image1.2.png", "image1.3.png", "image1.4.png"]', descs: '["Full Set View", "3-Seater Angled", "3-Seater Front", "1-Seater Profile"]' },
+        { name: "53 No. Model (Golden Brown)", price: 75000, imgs: '["image10.1.png", "image10.2.png", "image10.3.png", "image10.4.png", "image10.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
+        { name: "53 No. Model (Classic Black)", price: 75000, imgs: '["image2.1.png", "image2.2.png", "image2.3.png", "image2.4.jpg", "image2.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
+        { name: "53 No. Model (Royal Purple)", price: 75000, imgs: '["image3.1.png", "image3.2.png", "image3.3.png", "image3.4.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile"]' },
+        { name: "53 No. Model (Cream & Tan)", price: 75000, imgs: '["image4.1.png", "image4.2.png", "image4.3.png", "image4.4.png", "image4.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
+        { name: "53 No. Model (Light Tan)", price: 75000, imgs: '["image5.1.png", "image5.2.png", "image5.3.png", "image5.4.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile"]' },
+        { name: "53 No. Model (Emerald Green)", price: 75000, imgs: '["image6.1.png", "image6.2.png", "image6.3.png", "image6.4.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile"]' },
+        { name: "53 No. Model (Teal Blue)", price: 75000, imgs: '["image7.1.png", "image7.2.png", "image7.3.png", "image7.4.png", "image7.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
+        { name: "53 No. Model (Deep Magenta)", price: 75000, imgs: '["image8.1.png", "image8.2.png", "image8.3.png", "image8.4.png", "image8.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
+        { name: "53 No. Model (Olive Green)", price: 75000, imgs: '["image9.1.png", "image9.2.png", "image9.3.png", "image9.4.png", "image9.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' },
+        { name: "Diamond Stitch Sofa (Textured Beige)", price: 70000, imgs: '["image11.1.png", "image11.2.png", "image11.3.png", "image11.4.png", "image11.5.png"]', descs: '["Full Set View", "3-Seater Front", "1-Seater Front", "Side Profile", "Detail Angle"]' }
     ];
 
     categories.forEach((category, catIndex) => {
